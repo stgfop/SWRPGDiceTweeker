@@ -1,4 +1,79 @@
 window.onload=function(){
+
+//dices[DICE_NAME][SYMBOL_NAME] -> probability (expected value)
+var dices = {
+	"boost": {
+		"success": 2 / 6,
+		"advantage": 4 / 6,
+		"triumph": 0,
+		"failure": 0,
+		"threat": 0,
+		"despair": 0,
+		"light": 0,
+		"dark": 0
+	},
+	"setback": {
+		"success": 0,
+		"advantage": 0,
+		"triumph": 0,
+		"failure": 2 / 6,
+		"threat": 2 / 6,
+		"despair": 0,
+		"light": 0,
+		"dark": 0
+	},
+	"ability": {
+		"success": 5 / 8,
+		"advantage": 5 / 8,
+		"triumph": 0,
+		"failure": 0,
+		"threat": 0,
+		"despair": 0,
+		"light": 0,
+		"dark": 0
+	},
+	"difficulty": {
+		"success": 0,
+		"advantage": 0,
+		"triumph": 0,
+		"failure": 4 / 8,
+		"threat": 6 / 8,
+		"despair": 0,
+		"light": 0,
+		"dark": 0
+	},
+	"proficiency": {
+		"success": 9 / 12,
+		"advantage": 8 / 12,
+		"triumph": 1 / 12,
+		"failure": 0,
+		"threat": 0,
+		"despair": 0,
+		"light": 0,
+		"dark": 0
+	},
+	"chalenge": {
+		"success": 0,
+		"advantage": 0,
+		"triumph": 0,
+		"failure": 8 / 12,
+		"threat": 8 / 12,
+		"despair": 1 / 12,
+		"light": 0,
+		"dark": 0
+	},
+	"force": {
+		"success": 0,
+		"advantage": 0,
+		"triumph": 0,
+		"failure": 0,
+		"threat": 0,
+		"despair": 0,
+		"light": 8 / 12,
+		"dark": 8 / 12
+	}
+}
+
 var currentCarac = null;
 var currentSkill = null;
 var currentBoost = null;
@@ -87,9 +162,9 @@ function Update() {
 }
 
 function UpdateExpectation(apt, pro, boo) {
-  var succ = apt * 0.50 + apt * 2 * 0.12 + pro * 0.58 + pro * 2 * 0.16 + boo * 0.33;
-  var adva = apt * 0.50 + apt * 2 * 0.12 + pro * 0.50 + pro * 2 * 0.16 + boo * 0.5 + boo * 2 * 0.16;
-  var triu = pro * 0.0834;
+  var succ = apt*dices.ability.success + pro*dices.proficiency.success + boo*dices.boost.success;
+  var adva = apt*dices.ability.advantage + pro*dices.proficiency.advantage + boo*dices.boost.advantage;
+  var triu = apt*dices.ability.triumph + pro*dices.proficiency.triumph + boo*dices.boost.triumph;
 
   $("#proba-success").html(succ.toFixed(2));
   $("#proba-advantage").html(adva.toFixed(2));
@@ -128,10 +203,10 @@ function UpdateResultTable(apt, pro, boo, sbk, chg, bonuses) {
 
 	
     var maluses = [
-      infDices * 0.37 + infDices * 2 * 0.12 + sbk * 0.33 + chgDices * 0.5 + chgDices * 2 * 0.16,
-      infDices * 0.62 + infDices * 5 * 0.12 + sbk * 0.33 + chgDices * 0.5 + chgDices * 2 * 0.16,
-      0,
-      chgDices * 0.0834
+	  infDices*dices.difficulty.failure + chgDices*dices.chalenge.failure + sbk*dices.setback.failure,
+	  infDices*dices.difficulty.threat + chgDices*dices.chalenge.threat + sbk*dices.setback.threat,
+	  0,
+	  infDices*dices.difficulty.despair + chgDices*dices.chalenge.despair + sbk*dices.setback.despair
     ]
 
     for (var i = 0; i < 4; i++) {
