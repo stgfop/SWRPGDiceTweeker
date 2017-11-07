@@ -4,14 +4,24 @@
 
 This tool for Star Wars RPG (FFG) allows you to tweek your dices to find the perfect difficulty setting for your need.
 
-## Usage
+## Webapp
+Launch the [webapp](https://stgfop.github.io/SWRPGDiceTweeker/code/index.html)
+
+## Offline Installation
+1. Clone this repository : [download latest master.zip](https://github.com/stgfop/SWRPGDiceTweeker/archive/master.zip)
+2. Unzip the master.zip archive
+3. Navigate to the SWRPGDiceTweeker-master/code folder
+4. Open the file index.html with your favorite browser
+
+## User Guide
+### Usage
 
 1.  Select the Caracteristic level of your player (eg. Brawn)
 2.  Select the Skill level of your player (eg. Athletics)
 3.  The result is displayed on the bottom table
 4.  Tweek the amount of Boost, Setback and Challenge dices until satisfied
 
-## What is computed ?
+### What is computed ?
 
 The table has 4 columns showing the amount of Success, Advantage, Triumph and Despair you can expect per Roll on average.
 A negative Success/Advantage indicates a number of Failure/Threat instead.
