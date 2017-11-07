@@ -5,8 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0-alpha.6/darkly/bootstrap.min.css">
   <script type="text/javascript" src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
   <script type="text/javascript" src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -133,43 +132,55 @@
 
 <hr>
 
-<div class="container help">
-  <h4>Documentation</h4>
-  <p>This tool allows you to tweek your dices to find the perfect difficulty setting for your need.</p>
-  <h4>Usage</h4>
-  <ol>
-    <li>Select the Caracteristic level of your player (eg. Brawn)</li>
-    <li>Select the Skill level of your player (eg. Athletics)</li>
-    <li>The result is displayed on the bottom table</li>
-    <li>Tweek the amount of Boost, Setback and Challenge dices until satisfied</li>
-  </ol>
-  <h4>What is computed ?</h4>
-  <p>The table has 4 columns showing the amount of Success, Advantage, Triumph and Despair you can expect per Roll on average.
-    <br>A negative Success/Advantage indicates a number of Failure/Threat instead.
-    <br>For example a value of :</p>
-  <ul>
-    <li>1 indicate you can expect 1 symbol every roll on average</li>
-    <li>2 indicate you can expect 2 symbol every roll on average</li>
-    <li>3 indicate you can expect 3 symbol every roll on average</li>
-    <li>...</li>
-    <li>0.5 indicate you can expect 1 symbol every 2 rolls on average</li>
-    <li>0.25 indicate you can expect 1 symbol every 4 rolls on average</li>
-  </ul>
-  <p>The value computed are the Expected Values, see <a href="https://en.wikipedia.org/wiki/Expected_value">Wikipedia article</a></p>
-  <p>The scale of color is the following:<br>
-    <span class="btn btn-fail-4">-4</span>
-    <span class="btn btn-fail-3">-3</span>
-    <span class="btn btn-fail-2">-2</span>
-    <span class="btn btn-fail-1">-1</span>
-    <span class="btn btn-null">0</span>
-    <span class="btn btn-success-1">1</span>
-    <span class="btn btn-success-2">2</span>
-    <span class="btn btn-success-3">3</span>
-    <span class="btn btn-success-4">4</span>
-    <span class="btn btn-success-5">5</span>
-    <span class="btn btn-success-6">6</span>
-  </p>
+<div class="container panel-group row">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1" class="btn btn-info collapse-doc">Documentation</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-body panel-collapse collapse">
+		<div class="help">
+		  <p>This tool allows you to tweek your dices to find the perfect difficulty setting for your need.</p>
+		  <h4>Usage</h4>
+		  <ol>
+		    <li>Select the Caracteristic level of your player (eg. Brawn)</li>
+		    <li>Select the Skill level of your player (eg. Athletics)</li>
+		    <li>The result is displayed on the bottom table</li>
+		    <li>Tweek the amount of Boost, Setback and Challenge dices until satisfied</li>
+		  </ol>
+		  <h4>What is computed ?</h4>
+		  <p>The table has 4 columns showing the amount of Success, Advantage, Triumph and Despair you can expect per Roll on average.
+		    <br>A negative Success/Advantage indicates a number of Failure/Threat instead.
+		    <br>For example a value of :</p>
+		  <ul>
+		    <li>1 indicate you can expect 1 symbol every roll on average</li>
+		    <li>2 indicate you can expect 2 symbol every roll on average</li>
+		    <li>3 indicate you can expect 3 symbol every roll on average</li>
+		    <li>...</li>
+		    <li>0.5 indicate you can expect 1 symbol every 2 rolls on average</li>
+		    <li>0.25 indicate you can expect 1 symbol every 4 rolls on average</li>
+		  </ul>
+		  <p>The value computed are the Expected Values, see <a href="https://en.wikipedia.org/wiki/Expected_value">Wikipedia article</a></p>
+		  <p>The scale of color is the following:<br>
+		    <span class="btn btn-fail-4">-4</span>
+		    <span class="btn btn-fail-3">-3</span>
+		    <span class="btn btn-fail-2">-2</span>
+		    <span class="btn btn-fail-1">-1</span>
+		    <span class="btn btn-null">0</span>
+		    <span class="btn btn-success-1">1</span>
+		    <span class="btn btn-success-2">2</span>
+		    <span class="btn btn-success-3">3</span>
+		    <span class="btn btn-success-4">4</span>
+		    <span class="btn btn-success-5">5</span>
+		    <span class="btn btn-success-6">6</span>
+		  </p>
+		</div>
+   </div>
+  </div>
 </div>
+
+<footer>SWRPG Dice Tweeker, a tool made by Elaum - <a href="https://www.reddit.com/user/elaum/">/u/elaum</a> | <a href="https://stgfop.github.io/SWRPGDiceTweeker/">github</a> </footer>
 
 </body>
 </html>

@@ -102,6 +102,16 @@ input {
   overflow: hidden;
 }
 
+a.collapse-doc{
+	color: white;
+}
+
+.help{
+	background-color: #333;
+	padding: 2em;
+	border-radius: 5px 8px;
+}
+
 #log {
   color: gray;
   font: monospace;
