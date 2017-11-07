@@ -1,0 +1,113 @@
+    body {
+  margin: 10px;
+}
+
+#expectations button, #result-table .col-3 {
+  overflow: hidden;
+}
+
+.help {
+  font-size: 75%;
+}
+
+.btn-fail-4,
+.btn-fail-4:hover {
+  background-color: #99000d;
+}
+
+.btn-fail-3,
+.btn-fail-3:hover {
+  background-color: #cb181d;
+}
+
+.btn-fail-2,
+.btn-fail-2:hover {
+  background-color: #ef3b2c;
+}
+
+.btn-fail-1,
+.btn-fail-1:hover {
+  background-color: #fb6a4a;
+}
+
+.btn-null,
+.btn-null:hover {
+  background-color: #444;
+}
+
+.btn-success-1,
+.btn-success-1:hover {
+  background-color: #c7e9b4;
+}
+
+.btn-success-2,
+.btn-success-2:hover {
+  background-color: #7fcdbb;
+}
+
+.btn-success-3,
+.btn-success-3:hover {
+  background-color: #41b6c4;
+}
+
+.btn-success-4,
+.btn-success-4:hover {
+  background-color: #1d91c0;
+}
+
+.btn-success-5,
+.btn-success-5:hover {
+  background-color: #225ea8;
+}
+
+.btn-success-6,
+.btn-success-6:hover {
+  background-color: #0c2c84;
+}
+
+.btn-selected,
+.btn-selected:hover {
+  color: yellow;
+  font-weight: bold;
+}
+
+.boost-active,
+.boost-active:hover {
+  background-color: #C5EDEC;
+}
+
+.setback-active,
+.setback-active:hover {
+  background-color: #222222;
+}
+
+.challenge-active,
+.challenge-active:hover {
+  background-color: #D51212;
+}
+
+.infortune,
+.infortune:hover {
+  background-color: #A330F2;
+}
+
+#result-table {}
+
+input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+#log {
+  color: gray;
+  font: monospace;
+  font-size: 8pt;
+}
+
+#log p {
+  margin-bottom: 0.2em;
+}

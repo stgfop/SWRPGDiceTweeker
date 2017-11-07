@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+  <script type="text/javascript" src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="scripts.js"></script>
+    
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>SWRPG Dice Tweeker by elaum</title>
+</head>
+
+<body>
+  <div class="container row">
+  <h3 class="col-4">Caracteristic</h3>
+  <div class="btn-group col-8">
+    <label class="btn btn-success-1">
+      <input name="carac" id="carac-1" value="1" type="radio">1</label>
+    <label class="btn btn-success-2">
+      <input name="carac" id="carac-2" value="2" type="radio">2</label>
+    <label class="btn btn-success-3">
+      <input name="carac" id="carac-3" value="3" type="radio">3</label>
+    <label class="btn btn-success-4">
+      <input name="carac" id="carac-4" value="4" type="radio">4</label>
+    <label class="btn btn-success-5">
+      <input name="carac" id="carac-5" value="5" type="radio">5</label>
+    <label class="btn btn-success-6">
+      <input name="carac" id="carac-6" value="6" type="radio">6</label>
+  </div>
+</div>
+<div class="container row">
+  <h3 class="col-4">Skill</h3>
+  <div class="btn-group col-8">
+    <label class="btn btn-null">
+      <input name="skill" id="skill-0" value="0" type="radio">0</label>
+    <label class="btn btn-success-1">
+      <input name="skill" id="skill-1" value="1" type="radio">1</label>
+    <label class="btn btn-success-2">
+      <input name="skill" id="skill-2" value="2" checked="" type="radio">2</label>
+    <label class="btn btn-success-3">
+      <input name="skill" id="skill-3" value="3" type="radio">3</label>
+    <label class="btn btn-success-4">
+      <input name="skill" id="skill-4" value="4" type="radio">4</label>
+    <label class="btn btn-success-5">
+      <input name="skill" id="skill-5" value="5" type="radio">5</label>
+  </div>
+</div>
+<div class="container row">
+  <h3 class="col-4">Boost</h3>
+  <div class="btn-group col-8">
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-0" value="0" type="radio">0</label>
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-1" value="1" type="radio">1</label>
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-2" value="2" type="radio">2</label>
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-3" value="3" type="radio">3</label>
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-4" value="4" type="radio">4</label>
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-5" value="5" type="radio">5</label>
+  </div>
+</div>
+<div class="container row">
+  <h3 class="col-4">Setback</h3>
+  <div class="btn-group col-8">
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-0" value="0" type="radio">0</label>
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-1" value="1" type="radio">1</label>
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-2" value="2" type="radio">2</label>
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-3" value="3" type="radio">3</label>
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-4" value="4" type="radio">4</label>
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-5" value="5" type="radio">5</label>
+  </div>
+</div>
+<div class="container row">
+  <h3 class="col-4">Challenge</h3>
+  <div class="btn-group col-8">
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-0" value="0" type="radio">0</label>
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-1" value="1" type="radio">1</label>
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-2" value="2" type="radio">2</label>
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-3" value="3" type="radio">3</label>
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-4" value="4" type="radio">4</label>
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-5" value="5" type="radio">5</label>
+  </div>
+</div>
+
+<div class="container row" id="expectations">
+  <h3 class="col-3 btn">Diff.\ Base</h3>
+  <button type="button" class="btn btn-success-1 col-2">
+    <span class="hidden-xs">Success</span><br>
+    <span class="badge badge-light" id="proba-success">0.0</span>
+  </button>
+  <button type="button" class="btn btn-success-1 col-2">
+    <span class="hidden-xs">Advantage</span><br>
+    <span class="badge badge-light" id="proba-advantage">0.0</span>
+  </button>
+  <button type="button" class="btn btn-success-1 col-2">
+    <span class="hidden-xs">Triumph</span><br>
+    <span class="badge badge-light" id="proba-triumph">0.0</span>
+  </button>
+  <button type="button" class="btn btn-null col-2">
+    <span class="hidden-xs">Despair</span><br>
+    <span class="badge badge-light" id="proba-despair">0.0</span>
+  </button>
+</div>
+
+<div id="result-table"></div>
+
+
+<div class="container row">
+  <div id="log"></div>
+</div>
+
+<hr>
+
+<div class="container help">
+  <h4>Documentation</h4>
+  <p>This tool allows you to tweek your dices to find the perfect difficulty setting for your need.</p>
+  <h4>Usage</h4>
+  <ol>
+    <li>Select the Caracteristic level of your player (eg. Brawn)</li>
+    <li>Select the Skill level of your player (eg. Athletics)</li>
+    <li>The result is displayed on the bottom table</li>
+    <li>Tweek the amount of Boost, Setback and Challenge dices until satisfied</li>
+  </ol>
+  <h4>What is computed ?</h4>
+  <p>The table has 4 columns showing the amount of Success, Advantage, Triumph and Despair you can expect per Roll on average.
+    <br>A negative Success/Advantage indicates a number of Failure/Threat instead.
+    <br>For example a value of :</p>
+  <ul>
+    <li>1 indicate you can expect 1 symbol every roll on average</li>
+    <li>2 indicate you can expect 2 symbol every roll on average</li>
+    <li>3 indicate you can expect 3 symbol every roll on average</li>
+    <li>...</li>
+    <li>0.5 indicate you can expect 1 symbol every 2 rolls on average</li>
+    <li>0.25 indicate you can expect 1 symbol every 4 rolls on average</li>
+  </ul>
+  <p>The value computed are the Expected Values, see <a href="https://en.wikipedia.org/wiki/Expected_value">Wikipedia article</a></p>
+  <p>The scale of color is the following:<br>
+    <span class="btn btn-fail-4">-4</span>
+    <span class="btn btn-fail-3">-3</span>
+    <span class="btn btn-fail-2">-2</span>
+    <span class="btn btn-fail-1">-1</span>
+    <span class="btn btn-null">0</span>
+    <span class="btn btn-success-1">1</span>
+    <span class="btn btn-success-2">2</span>
+    <span class="btn btn-success-3">3</span>
+    <span class="btn btn-success-4">4</span>
+    <span class="btn btn-success-5">5</span>
+    <span class="btn btn-success-6">6</span>
+  </p>
+</div>
+
+</body>
+</html>
