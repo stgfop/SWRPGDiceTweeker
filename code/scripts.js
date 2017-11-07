@@ -109,24 +109,36 @@ function UpdateResultTable(apt, pro, boo, sbk, chg, bonuses) {
   for (var inf = 0; inf <= 5; inf++) {
     var row = $('<div class="container row" id="expectations"></div>');
     var h3 = $('<h3 class="col-3 btn infortune"></h3>');
-    var h3span = $('<span>'+inf+'</span>');
+	var infDices = inf-chg;
+	var chgDices = chg;
+	if (infDices < 0) {
+		infDices = 0;
+		chgDices = inf;
+	}
+	var label = ""+inf;
+	if (chgDices > 0) {
+		label = infDices+"/"+chgDices;
+	}
+	
+    var h3span = $('<span>'+label+'</span>');
     h3.append(h3span);
     h3span = $('<span class="hidden-xs"> - '+difficultyLevels[inf]+'</span>');
     h3.append(h3span);
     row.append(h3);
 
+	
     var maluses = [
-      inf * 0.37 + inf * 2 * 0.12 + sbk * 0.33 + chg * 0.5 + chg * 2 * 0.16,
-      inf * 0.62 + inf * 5 * 0.12 + sbk * 0.33 + chg * 0.5 + chg * 2 * 0.16,
+      infDices * 0.37 + infDices * 2 * 0.12 + sbk * 0.33 + chgDices * 0.5 + chgDices * 2 * 0.16,
+      infDices * 0.62 + infDices * 5 * 0.12 + sbk * 0.33 + chgDices * 0.5 + chgDices * 2 * 0.16,
       0,
-      chg * 0.0834
+      chgDices * 0.0834
     ]
 
     for (var i = 0; i < 4; i++) {
       var result = (bonuses[i] - maluses[i]) * (i == 3 ? -1 : 1);
       var color = ColorFor(result * (i >= 2 ? 12 : 1));
       var button = $('<button type="button" class="btn ' + color + ' col-2"></button>');
-      var span = $('<span class="badge badge-light" id="result-' + inf + '-' + i + '"> -'+inf+'</span>');
+      var span = $('<span class="badge badge-light" id="result-' + inf + '-' + i + '"></span>');
 
       span.data("color", color);
       span.text(result.toFixed(2));
