@@ -10,7 +10,7 @@
   <script type="text/javascript" src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
   <script type="text/javascript" src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="scripts.js"></script>
-    
+
   <link rel="stylesheet" type="text/css" href="style.css">
 
   <title>SWRPG Dice Tweeker by elaum</title>
@@ -18,7 +18,7 @@
 
 <body>
   <div class="container row">
-  <h3 class="col-4">Caracteristic</h3>
+  <h3 class="col-4">Characteristic</h3>
   <div class="btn-group col-8">
     <label class="btn btn-success-1">
       <input name="carac" id="carac-1" value="1" type="radio">1</label>
@@ -32,6 +32,8 @@
       <input name="carac" id="carac-5" value="5" type="radio">5</label>
     <label class="btn btn-success-6">
       <input name="carac" id="carac-6" value="6" type="radio">6</label>
+    <label class="btn btn-success-7">
+      <input name="carac" id="carac-7" value="7" type="radio">7</label>
   </div>
 </div>
 <div class="container row">
@@ -49,6 +51,10 @@
       <input name="skill" id="skill-4" value="4" type="radio">4</label>
     <label class="btn btn-success-5">
       <input name="skill" id="skill-5" value="5" type="radio">5</label>
+    <label class="btn btn-success-6">
+      <input name="skill" id="skill-6" value="6" type="radio">6</label>
+    <label class="btn btn-success-7">
+      <input name="skill" id="skill-7" value="7" type="radio">7</label>
   </div>
 </div>
 <div class="container row">
@@ -66,6 +72,10 @@
       <input class="boost" name="boost" id="boost-4" value="4" type="radio">4</label>
     <label class="btn btn-null">
       <input class="boost" name="boost" id="boost-5" value="5" type="radio">5</label>
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-6" value="6" type="radio">6</label>
+    <label class="btn btn-null">
+      <input class="boost" name="boost" id="boost-7" value="7" type="radio">7</label>
   </div>
 </div>
 <div class="container row">
@@ -83,10 +93,14 @@
       <input class="setback" name="setback" id="setback-4" value="4" type="radio">4</label>
     <label class="btn btn-null">
       <input class="setback" name="setback" id="setback-5" value="5" type="radio">5</label>
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-6" value="6" type="radio">6</label>
+    <label class="btn btn-null">
+      <input class="setback" name="setback" id="setback-7" value="7" type="radio">7</label>
   </div>
 </div>
 <div class="container row">
-  <h3 class="col-4">Challenge</h3>
+  <h3 class="col-4" id="switchChallengeType-header">Diff. upgrade</h3>
   <div class="btn-group col-8">
     <label class="btn btn-null">
       <input class="challenge" name="challenge" id="challenge-0" value="0" type="radio">0</label>
@@ -100,24 +114,31 @@
       <input class="challenge" name="challenge" id="challenge-4" value="4" type="radio">4</label>
     <label class="btn btn-null">
       <input class="challenge" name="challenge" id="challenge-5" value="5" type="radio">5</label>
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-6" value="6" type="radio">6</label>
+    <label class="btn btn-null">
+      <input class="challenge" name="challenge" id="challenge-7" value="7" type="radio">7</label>
   </div>
 </div>
-
+<div class="container row">
+  <label class="col-12">
+    <input name="switchChallengeType" id="switchChallengeType" type="checkbox"> <span id="switchChallengeType-text">Switch from Difficulty upgrade to Challenge</span></label>
+</div>
 <div class="container row" id="expectations">
-  <h3 class="col-3 btn"><span style="float:right;">Unmodified pool</span><br> Diff./Chal. dices</h3>
-  <button type="button" class="btn btn-success-1 col-2">
+  <h3 class="col-3 btn"><span style="float:right;">Unmodified pool</span><br> Diff./Chal. dice</h3>
+  <button type="button" class="btn col-2">
     <span class="hidden-xs">Success</span><br>
     <span class="badge badge-light" id="proba-success">0.0</span>
   </button>
-  <button type="button" class="btn btn-success-1 col-2">
+  <button type="button" class="btn col-2">
     <span class="hidden-xs">Advantage</span><br>
     <span class="badge badge-light" id="proba-advantage">0.0</span>
   </button>
-  <button type="button" class="btn btn-success-1 col-2">
+  <button type="button" class="btn col-2">
     <span class="hidden-xs">Triumph</span><br>
     <span class="badge badge-light" id="proba-triumph">0.0</span>
   </button>
-  <button type="button" class="btn btn-null col-2">
+  <button type="button" class="btn col-2">
     <span class="hidden-xs">Despair</span><br>
     <span class="badge badge-light" id="proba-despair">0.0</span>
   </button>
@@ -141,13 +162,13 @@
     </div>
     <div id="collapse1" class="panel-body panel-collapse collapse">
 		<div class="help">
-		  <p>This tool allows you to tweek your dices to find the perfect difficulty setting for your need.</p>
+		  <p>This tool allows you to tweek your dice to find the perfect difficulty setting for your need.</p>
 		  <h4>Usage</h4>
 		  <ol>
-		    <li>Select the Caracteristic level of your player (eg. Brawn)</li>
+		    <li>Select the Characteristic level of your player (eg. Brawn)</li>
 		    <li>Select the Skill level of your player (eg. Athletics)</li>
 		    <li>The result is displayed on the bottom table</li>
-		    <li>Tweek the amount of Boost, Setback and Challenge dices until satisfied</li>
+		    <li>Tweek the amount of Boost, Setback and Challenge dice until satisfied</li>
 		  </ol>
 		  <h4>What is computed ?</h4>
 		  <p>The table has 4 columns showing the amount of Success, Advantage, Triumph and Despair you can expect per Roll on average.
@@ -173,7 +194,8 @@
 		    <span class="btn btn-success-3">3</span>
 		    <span class="btn btn-success-4">4</span>
 		    <span class="btn btn-success-5">5</span>
-		    <span class="btn btn-success-6">6</span>
+        <span class="btn btn-success-6">6</span>
+        <span class="btn btn-success-7">7</span>
 		  </p>
 		</div>
    </div>

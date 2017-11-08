@@ -79,6 +79,7 @@ var currentSkill = null;
 var currentBoost = null;
 var currentSetback = null;
 var currentChallenge = null;
+var shouldUpgradeDifficulty = false;
 var difficultyLevels = ["Trivial", "Easy", "Average", "Hard", "Daunting", "Formidable"]
 
 $("input").each(function(index, elm) {
@@ -97,7 +98,9 @@ $("input").each(function(index, elm) {
     } else if (this.name === "challenge") {
       currentChallenge = this;
       UpdateDices(this, this.name);
-    }
+    } else if (this.name === "switchChallengeType") {
+			SwitchChallengeType(this);
+		}
   });
 });
 
@@ -184,24 +187,40 @@ function UpdateResultTable(apt, pro, boo, sbk, chg, bonuses) {
   for (var inf = 0; inf <= 5; inf++) {
     var row = $('<div class="container row" id="expectations"></div>');
     var h3 = $('<h3 class="col-3 btn infortune"></h3>');
-	var infDices = inf-chg;
-	var chgDices = chg;
-	if (infDices < 0) {
-		infDices = 0;
-		chgDices = inf;
-	}
-	var label = ""+inf;
-	if (chgDices > 0) {
-		label = infDices+"/"+chgDices;
-	}
-	
+		var infDices = inf-chg;
+		var chgDices = chg;
+		var label;
+		if (shouldUpgradeDifficulty) {
+			infDices = inf;
+			chgDices = 0;
+			var upgrade = chg;
+			while (upgrade > 0) {
+				if (infDices > 0) {
+					chgDices++;
+					infDices--;
+				} else {
+					infDices++;
+				}
+				upgrade--;
+			}
+		} else {
+			if (infDices < 0) {
+				infDices = 0;
+				chgDices = inf;
+			}
+		}
+		if (chgDices > 0) {
+			label = infDices+"/"+chgDices;
+		} else {
+			label = ""+infDices;
+		}
     var h3span = $('<span>'+label+'</span>');
     h3.append(h3span);
     h3span = $('<span class="hidden-xs"> - '+difficultyLevels[inf]+'</span>');
     h3.append(h3span);
     row.append(h3);
 
-	
+
     var maluses = [
 	  infDices*dices.difficulty.failure + chgDices*dices.chalenge.failure + sbk*dices.setback.failure,
 	  infDices*dices.difficulty.threat + chgDices*dices.chalenge.threat + sbk*dices.setback.threat,
@@ -244,9 +263,19 @@ function ColorFor(value) {
   if (value < 3.0) return "btn-success-2";
   if (value < 4.0) return "btn-success-3";
   if (value < 5.0) return "btn-success-4";
-  if (value < 6.0) return "btn-success-5";
-  return "btn-success-6";
+	if (value < 6.0) return "btn-success-5";
+	if (value < 7.0) return "btn-success-6";
+  return "btn-success-7";
 }
+
+function SwitchChallengeType(elm) {
+	shouldUpgradeDifficulty = !elm.checked;
+
+	$("#switchChallengeType-text").html((shouldUpgradeDifficulty ? "Switch from Difficulty upgrade to Challenge" : "Switch from Challenge to Difficulty upgrade"))
+	$("#switchChallengeType-header").html((shouldUpgradeDifficulty ? "Diff. upgrade" : "Challenge"))
+  Update();
+}
+
 
 function log() {
   var message = "<p>";

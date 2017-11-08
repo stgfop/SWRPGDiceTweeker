@@ -16,7 +16,7 @@ Launch the [webapp](https://stgfop.github.io/SWRPGDiceTweeker/code/index.html)
 ## User Guide
 ### Usage
 
-1.  Select the Caracteristic level of your player (eg. Brawn)
+1.  Select the Characteristic level of your player (eg. Brawn)
 2.  Select the Skill level of your player (eg. Athletics)
 3.  The result is displayed on the bottom table
 4.  Tweek the amount of Boost, Setback and Challenge dices until satisfied
@@ -43,4 +43,3 @@ The value computed are the Expected Values, see [Wikipedia article](https://en.w
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-

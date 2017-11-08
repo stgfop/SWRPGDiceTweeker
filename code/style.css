@@ -1,4 +1,4 @@
-    body {
+body {
   margin: 10px;
 }
 
@@ -33,21 +33,25 @@
 .btn-null,
 .btn-null:hover {
   background-color: #444;
+  color: white;
 }
 
 .btn-success-1,
 .btn-success-1:hover {
   background-color: #c7e9b4;
+  color: black;
 }
 
 .btn-success-2,
 .btn-success-2:hover {
   background-color: #7fcdbb;
+  color: black;
 }
 
 .btn-success-3,
 .btn-success-3:hover {
   background-color: #41b6c4;
+  color: black;
 }
 
 .btn-success-4,
@@ -65,10 +69,30 @@
   background-color: #0c2c84;
 }
 
-.btn-selected,
-.btn-selected:hover {
-  color: yellow;
-  font-weight: bold;
+.btn-success-7,
+.btn-success-7:hover {
+  background-color: #3C0886;
+}
+
+.btn-success-1 .badge, .btn-success-2 .badge, .btn-success-3 .badge {
+  color: black;
+}
+
+.btn-success-4 .hidden-xs, .btn-success-5 .hidden-xs, .btn-success-6 .hidden-xs, .btn-success-7 .hidden-xs {
+  color: white;
+}
+
+label.btn {
+  border-top: 3px solid rgba(127, 127, 127, 0);
+  border-bottom: 3px solid rgba(127, 127, 127, 0);}
+
+
+label.btn-selected,
+label.btn-selected:hover {
+  color: red;
+  font-weight: bolder;
+  border-top: 3px solid rgba(127, 127, 127, 0.8);
+  border-bottom: 3px solid rgba(127, 127, 127, 0.8);
 }
 
 .boost-active,
@@ -93,7 +117,7 @@
 
 #result-table {}
 
-input {
+input[type=radio] {
   position: absolute !important;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -102,7 +126,7 @@ input {
   overflow: hidden;
 }
 
-a.collapse-doc{
+a.collapse-doc, a.collapse-doc:active, a.collapse-doc:hover{
 	color: white;
 }
 
